@@ -1,11 +1,36 @@
-
-const { application, request } = require('express');
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
 const app = express();
+const userRouter = require("./routes/users");
+const adminRouter = require("./routes/admin");
+const { readdirSync } = require("fs");
+const dotenv = require("dotenv").config();
+const mongoose = require("mongoose");
+const { log } = require("console");
 
+// setting up CORS
+const options = {
+  origin: "http://localhost:5000",
+  SuccessStatus: 200,
+};
+app.use(cors(options));
 
-
-let port = 5000;
-app.listen(port,()=>{
-    console.log('listening on port '+port);
+//Dynamically accessing routes
+readdirSync("./routes").map((routes) => {
+  app.use("/", require("./routes/" + routes));
 });
+
+//Mongoose settings
+mongoose 
+  .connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,  
+  })
+  .then((data) => console.log("Database connection established"))
+  .catch((err) => console.log("Error in Database connection established : " ,err));
+ 
+//PORT settings
+let port = process.env.PORT || 8000;
+app.listen(port, () => {
+  console.log("listening on port " + port);
+});
+
