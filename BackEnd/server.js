@@ -6,14 +6,16 @@ const adminRouter = require("./routes/admin");
 const { readdirSync } = require("fs");
 const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
-const { log } = require("console");
 
 // setting up CORS
 const options = {
   origin: "http://localhost:5000",
   SuccessStatus: 200,
-};
+}; 
 app.use(cors(options));
+
+//JSON response 
+app.use(express.json());
 
 //Dynamically accessing routes
 readdirSync("./routes").map((routes) => {
