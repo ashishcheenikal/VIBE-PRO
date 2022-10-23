@@ -4,7 +4,8 @@ const app = express();
 const userRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 const { readdirSync } = require("fs");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
 const mongoose = require("mongoose");
 
 // setting up CORS
