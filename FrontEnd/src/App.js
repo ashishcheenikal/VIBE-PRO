@@ -1,11 +1,17 @@
+import { Routes,Route } from 'react-router-dom';
 import './App.css';
+import Home from './Pages/Home/Home';
+import Login from './Pages/Login/index';
+import Profile from './Pages/Profile/Profile';
 
 function App() {
   return (
-    <div className="App">
-     <div className="veruthe"><h1>Kando mwonnnee</h1></div>
-    </div>
-  );
+    <Routes>
+      <Route path='/login' element={<Login/>} exact/>
+      <Route path='/' element={<Home/>} />
+      <Route path='/profile' element={<Profile/>} />
+    </Routes>
+  )
 }
 
 export default App;
