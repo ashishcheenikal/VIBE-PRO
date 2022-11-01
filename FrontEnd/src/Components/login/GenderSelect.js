@@ -46,8 +46,14 @@ export default function GenderSelect({ handleRegisterChange, genderError }) {
         />
       </label>
       {genderError && (
-        <div className={!view3 ? "input_error" : "input_error input_error_select_large"}>
-          <div className={!view3 ? "error_arrow_bottom" : "error_arrow_left"}></div>
+        <div
+          className={
+            !view3 ? "input_error" : "input_error input_error_select_large"
+          }
+        >
+          <div
+            className={!view3 ? "error_arrow_bottom" : "error_arrow_left"}
+          ></div>
           {genderError}
         </div>
       )}

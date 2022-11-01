@@ -7,8 +7,8 @@ export default function DateOfBirthSelect({
   days,
   months,
   years,
-  dateError,
   handleRegisterChange,
+  dateError,
 }) {
   const view1 = useMediaQuery({
     query: "(min-width: 539px)",
@@ -22,7 +22,7 @@ export default function DateOfBirthSelect({
   return (
     <div
       className="reg_grid"
-      style={{ marginBottom: `${dateError && !view3 ? "70px" : "0"}` }}
+      style={{ marginBottom: `${dateError && !view3 ? "90px" : "0"}` }}
     >
       <select name="bDay" value={bDay} onChange={handleRegisterChange}>
         {days.map((day, i) => (
@@ -46,8 +46,14 @@ export default function DateOfBirthSelect({
         ))}
       </select>
       {dateError && (
-        <div className={!view3 ? "input_error" : "input_error input_error_select_large"}>
-          <div className={!view3 ? "error_arrow_bottom" : "error_arrow_left"}></div>
+        <div
+          className={
+            !view3 ? "input_error" : "input_error input_error_select_large"
+          }
+        >
+          <div
+            className={!view3 ? "error_arrow_bottom" : "error_arrow_left"}
+          ></div>
           {dateError}
         </div>
       )}

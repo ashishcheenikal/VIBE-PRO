@@ -14,8 +14,8 @@ a {
   color: inherit;
 }
 :root {
-  --bg-primary: linear-gradient(120deg, #fafafa 0%, #e26144 100%);
-  --bg-secondary:linear-gradient(120deg, #e26144 0%, #fafafa 100%);
+  --bg-primary: #fff;
+  --bg-secondary: #f0f2f5;
   --bg-third: #e4e6eb;
   --bg-forth: #f0f2f5;
   --color-primary: #050505;
@@ -26,7 +26,7 @@ a {
   --dark-bg-third: #3a3b3c;
   --dark-color-primary: #242526;
   --dark-color-secondary: #b0b3b8;
-  --blue-color:#f7fffe;
+  --blue-color: #1876f2;
   --green-color: #42b72a;
   --light-blue-color: #e7f3ff;
   --border-color: #ccced2;
@@ -46,27 +46,65 @@ a {
   font-family: inherit;
   font-weight: 600;
   font-size: 14px;
-  color: #ff6f47;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
-.blue_btn:hover{
-  color: #f7fffe;
-  background: #ff6f47;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-/*----Buttons---*/
+/*----Buttons----*/
 .blur {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   background: rgba(255, 255, 255, 0.768);
+  bottom: 0;
   z-index: 99;
 }
+
+/*----Buttons----*/
+
+/*-----Hovers-----*/
+.hover1:hover {
+  background: var(--bg-secondary);
+}
+.hover2:hover {
+  background: var(--bg-third);
+}
+.hover3:hover {
+  background: #d4d6da3a;
+}
+/*-----Hovers-----*/
+.card {
+  height: 500px;
+  width: 500px;
+  background: red;
+}
+
+/*----Scrollbar----*/
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #aeaeafa1;
+  border-radius: 5px;
+}
+/*----Scrollbar----*/
+
+/*---Circles------*/
+.small_circle {
+  position: relative;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 11px;
+  background: var(--bg-third);
+  cursor: pointer;
+}
+/*---Circles------*/
